@@ -8,14 +8,14 @@ import java.util.Optional;
 
 public class ValidationBean {
     public boolean validerPelpuseDto(PelouseDto bean){
-        return Optional.ofNullable(bean.getCoinSuperieur()).orElse("")
+        return Optional.ofNullable(bean.coinSuperieur()).orElse("")
                 .matches("^(\\s)*\\d(\\s)*\\d(\\s)*$");
     }
 
     public boolean validerTondeuseDto(TondeuseDto bean){
-        return Optional.ofNullable(bean.getMouvement()).orElse("")
+        return Optional.ofNullable(bean.mouvement()).orElse("")
                             .matches("^[G DA]*$")
-                && Optional.ofNullable(bean.getPosInitial()).orElse("")
+                && Optional.ofNullable(bean.posInitial()).orElse("")
                             .matches("^(\\s)*\\d(\\s)*\\d(\\s)*[\\sNEWS]$");
     }
 

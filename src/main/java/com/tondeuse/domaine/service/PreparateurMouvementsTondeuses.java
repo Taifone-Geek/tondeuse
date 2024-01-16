@@ -24,6 +24,9 @@ public class PreparateurMouvementsTondeuses {
 
     public List<MouvementsTondeuse> recupererMvtsTondeuses(List<String> lignesTondeuses) throws MauvaisFichierTondeuseException {
         List<MouvementsTondeuse> mouvementsTondeuses = new ArrayList<>();
+        if(lignesTondeuses.isEmpty()){
+            throw new MauvaisFichierTondeuseException("Le fichier n'est pas bon ");
+        }
         Pelouse pelouse = initPelouse(lignesTondeuses.get(0));
         int index = 1;
         ValidationBean validator =  new ValidationBean();
