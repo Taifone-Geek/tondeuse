@@ -1,5 +1,0 @@
-com\tondeuse\domaine\service\PreparateurMouvementsTondeusesTest.class
-com\tondeuse\conf\TestsConfig.class
-com\tondeuse\utils\LecteurFichierTest.class
-com\tondeuse\domaine\service\ActionneurTondeuseImplTest.class
-com\tondeuse\commande\CommanderTondeuseImplTest.class
