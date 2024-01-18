@@ -28,7 +28,7 @@ public class ActionneurTendeuseImplUnit5Test extends TestsConfig {
             "1, 3, S, G, 1, 3, E",
             "1, 3, S, D, 1, 3, W"
     })
-    void testAddition(int x, int y, char direction, char act, int x1, int y1, char direction1) {
+    void testExecuteAction(int x, int y, char direction, char act, int x1, int y1, char direction1) {
 
 
         Tondeuse tondeuse = new Tondeuse(new Coordonnee(x, y), DirectionEnum.directionFromChar(direction));
