@@ -4,7 +4,6 @@ import com.tondeuse.domaine.bean.MouvementsTondeuse;
 import com.tondeuse.domaine.bean.Pelouse;
 import com.tondeuse.domaine.bean.Tondeuse;
 import com.tondeuse.domaine.service.ActionneurTondeuse;
-import com.tondeuse.domaine.service.ActionneurTondeuseImpl;
 import com.tondeuse.domaine.service.PreparateurMouvementsTondeuses;
 import com.tondeuse.enums.ActionsEnum;
 import com.tondeuse.exception.MauvaisFichierTondeuseException;
@@ -17,10 +16,10 @@ import java.util.List;
 
 @Service
 public class CommanderTondeuseImpl implements CommanderTondeuse {
-    Logger logger = LoggerFactory.getLogger(CommanderTondeuseImpl.class);
-    final private ActionneurTondeuse actionneurTondeuseImpl;
+    public static final Logger logger = LoggerFactory.getLogger(CommanderTondeuseImpl.class);
+    private final ActionneurTondeuse actionneurTondeuseImpl;
 
-    final private PreparateurMouvementsTondeuses preparateurMouvementsTondeuses;
+    private final  PreparateurMouvementsTondeuses preparateurMouvementsTondeuses;
 
     public CommanderTondeuseImpl(ActionneurTondeuse actionneurTondeuseImpl, PreparateurMouvementsTondeuses preparateurMouvementsTondeuses) {
         this.actionneurTondeuseImpl = actionneurTondeuseImpl;
@@ -29,9 +28,9 @@ public class CommanderTondeuseImpl implements CommanderTondeuse {
 
     public List<MouvementsTondeuse> lancerTondeuses(List<MouvementsTondeuse> mouvementsTondeuses) {
 
-        mouvementsTondeuses.stream().forEach(mouvement -> {
-            bouger(mouvement.pelouse(), mouvement.tondeuse(), mouvement.mouvements());
-        });
+        mouvementsTondeuses.stream().forEach(mouvement ->
+            bouger(mouvement.pelouse(), mouvement.tondeuse(), mouvement.mouvements())
+        );
 
         return mouvementsTondeuses;
     }

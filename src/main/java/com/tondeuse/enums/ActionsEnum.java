@@ -1,6 +1,7 @@
 package com.tondeuse.enums;
 
 import java.util.Arrays;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public enum ActionsEnum {
@@ -16,6 +17,9 @@ public enum ActionsEnum {
     }
 
     public static ActionsEnum recupererActionDeCode(String code){
-        return Arrays.asList(ActionsEnum.values()).stream().filter(a -> a.actionCode.equals(code)).collect(Collectors.toList()).stream().findFirst().get();
+        if(Optional.ofNullable(code).isPresent()){
+            return Arrays.asList(ActionsEnum.values()).stream().filter(a -> a.actionCode.equals(code)).toList().stream().findFirst().get();
+        }
+        return null;
     }
 }

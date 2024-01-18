@@ -29,7 +29,6 @@ public class PreparateurMouvementsTondeuses {
         }
         Pelouse pelouse = initPelouse(lignesTondeuses.get(0));
         int index = 1;
-        ValidationBean validator =  new ValidationBean();
         while (index < lignesTondeuses.size() - 1){
             MouvementsTondeuse mouvementsTondeuse = initMouvementsTondeuse(lignesTondeuses.get(index), lignesTondeuses.get(index + 1), pelouse);
             mouvementsTondeuses.add(mouvementsTondeuse);

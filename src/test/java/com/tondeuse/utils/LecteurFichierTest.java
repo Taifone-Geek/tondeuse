@@ -1,14 +1,15 @@
 package com.tondeuse.utils;
 
+import com.tondeuse.exception.MauvaisFichierTondeuseException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-public class LecteurFichierTest {
+class LecteurFichierTest {
 
     @Test
-    public void testLireFichier(){
+    void testLireFichier() throws MauvaisFichierTondeuseException {
 
         String path = "src/test/resources/jdd/tondeuses.txt";
 
