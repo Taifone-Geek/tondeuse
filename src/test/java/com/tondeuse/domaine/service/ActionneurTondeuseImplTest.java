@@ -42,26 +42,26 @@ public class ActionneurTondeuseImplTest extends TestsConfig {
 
     @Test
     public void testAvancerNord(){
-        Tondeuse tondeuse = new Tondeuse(new Coordonnee(1,3), DirectionEnum.E);
+        Tondeuse tondeuse = new Tondeuse(new Coordonnee(1,3), DirectionEnum.N);
         ActionsEnum action = ActionsEnum.recupererActionDeCode("A");
 
         actionneurTondeuse.executeAction(pelouse, tondeuse, action);
 
 
-        Assertions.assertEquals(2, tondeuse.getCoordonnee().getX());
-        Assertions.assertEquals(3, tondeuse.getCoordonnee().getY());
-        Assertions.assertEquals(DirectionEnum.E, tondeuse.getDirectionEnum());
+        Assertions.assertEquals(1, tondeuse.getCoordonnee().getX());
+        Assertions.assertEquals(4, tondeuse.getCoordonnee().getY());
+        Assertions.assertEquals(DirectionEnum.N, tondeuse.getDirectionEnum());
     }
 
     @Test
     public void testAvancerSud(){
-        Tondeuse tondeuse = new Tondeuse(new Coordonnee(1,3), DirectionEnum.E);
+        Tondeuse tondeuse = new Tondeuse(new Coordonnee(1,3), DirectionEnum.S);
         ActionsEnum action = ActionsEnum.recupererActionDeCode("A");
 
         actionneurTondeuse.executeAction(pelouse, tondeuse, action);
 
-        Assertions.assertEquals(2, tondeuse.getCoordonnee().getX());
-        Assertions.assertEquals(3, tondeuse.getCoordonnee().getY());
+        Assertions.assertEquals(1, tondeuse.getCoordonnee().getX());
+        Assertions.assertEquals(2, tondeuse.getCoordonnee().getY());
         Assertions.assertEquals(DirectionEnum.E, tondeuse.getDirectionEnum());
     }
 

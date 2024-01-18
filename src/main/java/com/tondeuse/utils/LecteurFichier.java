@@ -5,7 +5,6 @@ import com.tondeuse.exception.MauvaisFichierTondeuseException;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class LecteurFichier {
